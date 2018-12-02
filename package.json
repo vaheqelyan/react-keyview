@@ -1,0 +1,74 @@
+{
+  "name": "react-keyview",
+  "version": "1.0.0",
+  "description": "React components to display the list, table, and grid, without scrolling, use the keyboard keys to navigate through the data",
+  "main": "build/index.js",
+  "files": ["build/Grid.js", "build/List.js", "build/Table.js", "build/index.js"],
+  "keywords": [
+    "react",
+    "components",
+    "list",
+    "table",
+    "grid",
+    "keyboard",
+    "keys",
+    "navigation",
+    "data",
+    "tabular data"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'  -e '**/@types/**' ",
+    "fix-lint": "tslint --fix -c tslint.json 'src/**/*.ts'  -e '**/@types/**'",
+    "pretty": "prettier --config .prettierrc --write \"src/**/*.{ts,tsx}\" \"src/*.{ts,tsx}\" ",
+    "play:List": "parcel playground/List/index.html --no-hmr",
+    "play:Table": "parcel playground/Table/index.html --no-hmr",
+    "play:Grid": "parcel playground/Grid/index.html --no-hmr",
+    "finish": "concurrently \"npm run build\" \"npm run fix-lint\" \"npm run lint\" \"npm run pretty\"",
+
+    "play-surge": "surge --domain react-keyview.surge.sh",
+    "preversion": "npm run finish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaheqelyan/react-keyview.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaheqelyan/react-keyview/issues"
+  },
+  "homepage": "https://github.com/vaheqelyan/react-keyview#readme",
+  "devDependencies": {
+    "@types/faker": "^4.1.4",
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.11",
+    "classcat": "^3.2.3",
+    "concurrently": "^4.1.0",
+    "faker": "^4.1.0",
+    "husky": "^1.2.0",
+    "lodash.uniqueid": "^4.0.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.4.0",
+    "rollup": "^0.51.3",
+    "rollup-plugin-alias": "^1.4.0",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-prettier": "^0.4.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.14.0",
+    "rollup-watch": "^4.3.1",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run finish"
+    }
+  }
+}

@@ -1,3 +1,14 @@
+# Build folder 
+build/
+# Parcel - cache
+.cache/
+
+# Playground - dist
+dist/
+
+# Rollup, Typescript - cache
+.rpt2_cache/
+
 # Logs
 logs
 *.log
